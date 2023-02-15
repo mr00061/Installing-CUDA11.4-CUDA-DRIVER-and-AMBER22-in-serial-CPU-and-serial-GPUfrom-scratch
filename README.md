@@ -14,9 +14,12 @@ Verify which version of nvidia driver you have
 
 lspci | grep -i nvidia
 uname -m && cat /etc/*release 
+
 Verify your Kernel version
 uname -r
+
 You can install kernel using following command
+
 sudo apt-get install linux-headers-$(uname -r)
 
 You can check current gcc installed in your machine

@@ -8,6 +8,7 @@ Hi, I am very new user in amber. Here I am going to share my experience in detai
 
 
 Step1: Pre-Installation work before install cuda 11
+
 Check If you have cuda compatible cuda driver and cuda. Amber support cuda >=7 and <=11. Current cuda version is cuda 12 (not supported by amber). If you have cuda12 you need to uninstall it delete all cuda related file and cuda driver (cuda-toolkit). Even If you don’t install cuda, ubuntu automacally connect NVIDIA-DRM as display driver if it is connected your display monitor. First go to the following process
 
 Verify which version of nvidia driver you have
@@ -23,31 +24,49 @@ You can install kernel using following command
 sudo apt-get install linux-headers-$(uname -r)
 
 You can check current gcc installed in your machine
+
 gcc –version
 You can install gcc 
 sudo apt-get -y install gcc
+
 Before Installing cuda driver you should have performed following command in terminal
+
 To uninstall uncompatible cuda version
+
 sudo /usr/local/cuda-x.y/bin/cuda-uninstaller
+
 To uinstall uncompatible cuda driver
+
 sudo /usr/local/bin/nvidia-uninstaller
 
 Then performed following command that will remove all cuda and nvidia dependency and library
+
 sudo apt-get remove --purge '^nvidia-.*'
+
 sudo apt-get remove --purge '^libnvidia-.*'
+
 sudo apt-get remove --purge '^cuda-.*'
- Delete the CUDA releated path from your ~/.bashrc (nano ~/.bashrc will open your shell script)
+
+Delete the CUDA releated path from your ~/.bashrc (nano ~/.bashrc will open your shell script)
+
 nano ~/.bashrc
+
 delete the cuda related path and save the script then source it
+
 source ~/.bashrc
+
 Also delete cuda folder from your /usr/local/ directory
+
 sudo rm -rf /usr/local/cuda*
 
 Now you are ready for installation of cuda11.4 which is compatible for amber installation
 You can download cudatoolkit anywhere in your computer. I downloaded all file in my Documents folder. Use the following command to get cuda 11.4. You can go to nvidia website which one you prefer to install, be carefull always choose local installation. If you go to other installation method, It will give you latest cuda with cuda driver. If you prefere cuda-11.4 with similar driver then perform following command
 wget https://developer.download.nvidia.com/compute/cuda/11.4.0/local_installers/cuda_11.4.0_470.42.01_linux.run
 It will download cudatoolkit11.4 which contains compatible drivers and cuda11.4. My recommendation do not run as recommended in nvidia instructed (if you are not an advance user). You cannot install display driver it will show nvidia-drm still in use error. Go as following command prompt
+
+
 presss
+
 CTRL+ALT+F3 this will turnoff the display driver that in use
 Your machine now on text mode. It will asked for your user ID and Password (that you set it up while installing ubuntu) as for root user
 Then run

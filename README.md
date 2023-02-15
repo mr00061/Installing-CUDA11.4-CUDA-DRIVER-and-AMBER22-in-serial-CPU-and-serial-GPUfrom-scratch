@@ -64,7 +64,11 @@ $ sudo rm -rf /usr/local/cuda*
 
 Now you are ready for installation of cuda11.4 which is compatible for amber installation
 You can download cudatoolkit anywhere in your computer. I downloaded all file in my Documents folder. Use the following command to get cuda 11.4. You can go to nvidia website which one you prefer to install, be carefull always choose local installation. If you go to other installation method, It will give you latest cuda with cuda driver. If you prefere cuda-11.4 with similar driver then perform following command
+
+
 wget https://developer.download.nvidia.com/compute/cuda/11.4.0/local_installers/cuda_11.4.0_470.42.01_linux.run
+
+
 It will download cudatoolkit11.4 which contains compatible drivers and cuda11.4. 
 My recommendation do not run as recommended in nvidia instructed (if you are not an advance user). You cannot install display driver it will show nvidia-drm still in use error. Go as following command prompt
 

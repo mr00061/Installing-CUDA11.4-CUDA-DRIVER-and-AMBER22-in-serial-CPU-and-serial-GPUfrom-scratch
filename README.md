@@ -1,5 +1,5 @@
 # Installing-CUDA11.4-CUDA-DRIVER-and-AMBER22-in-serial-CPU-and-serial-GPUfrom-scratch
-Installing CUDA11.4 CUDA-DRIVER, and AMBER22 in serial CPU and serial GPU from-scratch
+# Installing CUDA11.4 CUDA-DRIVER, and AMBER22 in serial CPU and serial GPU from-scratch
 
 
 
@@ -7,7 +7,7 @@ I am writing this for the user who has linux ubuntu 20.04 version
 Hi, I am very new user in amber. Here I am going to share my experience in detailed. I am showing how to install amber22 and ambertools from scratch. Please Do carefully as I say it here.
 
 
-Step1: Pre-Installation work before install cuda 11
+# Step1: Pre-Installation work before install cuda 11
 
 Check If you have cuda compatible cuda driver and cuda. Amber support cuda >=7 and <=11. Current cuda version is cuda 12 (not supported by amber). If you have cuda12 you need to uninstall it delete all cuda related file and cuda driver (cuda-toolkit). Even If you don’t install cuda, ubuntu automacally connect NVIDIA-DRM as display driver if it is connected your display monitor. First go to the following process
 
@@ -114,7 +114,7 @@ sudo reboot
 
 it will bring your graphical version of ubunutu as it was before
 
-Step2: Pre-installatin for AMBER
+# Step2: Pre-installatin for AMBER
 
 Before installing amber in your computer make sure you have correct version of of dependencies: refers to (https://ambermd.org/InstUbuntu.php)
 Run following command
@@ -134,7 +134,7 @@ $ cmake –version
 
 You may have some of the dependencies already there
 
-Step3: Serial cpu version of amber22 and ambertools22 installation
+# Step3: Serial cpu version of amber22 and ambertools22 installation
 
 Then Download the AMBER22 and AMBERTOOLS22 in a same folder whereever you like. Make sure they must have been extracted in same folder
 
@@ -189,7 +189,7 @@ $ make test.serial
 
 When it is done you are ready for step4
 
-Step4: GPU version of pmemd.cuda installation
+# Step4: GPU version of pmemd.cuda installation
 
 This should be straight forward, make sure set up -DCUDA=TRUE in the linux version of part of run_cmake
 
@@ -223,3 +223,17 @@ $ make test.cuda.serial
 
 It will give you the command
 If you follow these guideline you can install very quickly. It tooks me four days to figure out everything. Hopefully, you will find this interesting and usefull. If you have any question please put in the disscussion parts.
+
+
+#Finally, Thanks to AMBER TEAM for providing me source code, I used different source that is provided bellow
+
+https://ambermd.org/
+
+https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#debian
+
+https://developer.nvidia.com/cuda-11-4-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=runfile_local
+
+https://unix.stackexchange.com/questions/440840/how-to-unload-kernel-module-nvidia-drm
+
+
+Leave a comment if it works or give error

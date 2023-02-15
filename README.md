@@ -67,27 +67,36 @@ It will download cudatoolkit11.4 which contains compatible drivers and cuda11.4.
 
 presss
 
-CTRL+ALT+F3 this will turnoff the display driver that in use
+CTRL+ALT+F3 
+this will turnoff the display driver that in use
 Your machine now on text mode. It will asked for your user ID and Password (that you set it up while installing ubuntu) as for root user
 Then run
-pwd will show you where are you now
+pwd 
+will show you where are you now
+
 modeprobe -r nvidia-drm
+
 then go to your directory whiere you downloaded cuda_11.4.0_470.42.01_linux.run
 then run (You may need to write whole line as tab button does not work in text mode)
+
 ls
+
 sudo sh cuda_11.4.0_470.42.01_linux.run
 
 Accept Make sure to check everything including driver and cuda-toolkit. Now you have successfully installed your cuda-driver and cuda	11.4.
 Open the ~/.bashrc script
 add following line at the end of your bash script
+
 nano ~/.bashrc
 
 export PATH="/usr/local/cuda-11.4/bin:$PATH"
 export CUDA_HOME="/usr/local/cuda-11.4/:$CUDA_HOME"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.4/lib64:$LD_LIBRARY_PATH"
+
 then source it
 source ~/.bashrc
 sudo reboot
+
 it will bring your graphical version of ubunutu as it was before
 
 Step2: Pre-installatin for AMBER
